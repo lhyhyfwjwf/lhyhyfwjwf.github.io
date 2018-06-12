@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="normalize.css">
+        <link rel="stylesheet" type="text/css" href="Grid.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://unpkg.com/ionicons@4.1.2/dist/css/ionicons.min.css" rel="stylesheet" >
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <title>STA 160 JOB MARKET ANALYSIS</title>
+    
+    
+    
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="row">
+                    <ul class="main-nav">
+                        <li><a href="#features">Overview</a></li>
+                        <li><a href="#works">Web SCRAPING</a></li>
+                        <li><a href="#cities">Cybercoder ANALYSIS</a></li>
+                        <li><a href="#plans">GEO ANALYSIS</a></li>
+                        <li><a href="#section-form">Conclusions</a></li>
+                    
+                    
+                    </ul>
+                
+                </div>
+            
+            
+            </nav>
+            <div class="cover-text-box">
+                <h1>STA 160 Spring 2018<br>Analysis of Data-related Jobs</h1>
+                <h4>Group Member: <br>Hanying Li,&nbsp; Timothy Murphy,&nbsp; Michael Nguyen,&nbsp; Qixian Zhao</h4>
+                <a class="btn btn-full" href="https://github.com/qxzhao1/STA160-Project" target="_blank">Visit our Github</a>
+                <a class="btn btn-ghost" href="https://docs.google.com/document/d/15bHDG9MP2HFXoauzA-TR95eVSsoyKXNi2Wvm_Eg-bOE/edit" target="_blank">Read our report</a>
+
+            
+            
+            
+            </div>
+        </header>
+        <section class="section-features" id="features">
+            <div class="row">
+                <h2>PART ONE &ndash; OVERVIEW</h2>
+
+                <p class="long-copy">
+    &emsp; &emsp; &nbsp; Entering the job market is intimidating to many job seekers and newly graduated college students. It does not have to be this way. Our goal is to provide job seekers knowledge they can use to make themselves more competitive. When someone is searching for an employment opportunity, they take into account the industry, company, duties, salary, location, and many other features. The purpose of this project is to gather, explore, and analyze job listing data to provide job seekers with insight on the skills required for full-time data scientist, data engineer, data analyst, and business intelligence positions across the United States. 
+
+
+                </p>
+                <p class="long-copy">
+&emsp; &emsp; &nbsp; Our team decided to collect data by scraping job postings from the Cybercoder  and the Simplyhired. Through the use of Natural Language Processing (NLP) and Text Mining (TM) methods, we obtained insights and recognized patterns that are unknown to the typical job seeker. We took a particular interest in the skill-set information as well as salary estimates provided by the job websites and then related our findings to geographic regions by comparing and contrasting skill requirements in different states, cities, and broader areas such as the east and west coast. 
+                </p>
+            </div>
+            
+            
+        
+        </section>
+        
+
+        <section class="section-steps" id="works">
+            
+            <div class="map"></div>
+            <div class="row">
+                <h2>Part Two &ndash; Web Scraping</h2>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3 box">
+                    <i class="icon ion-md-paper icon-big"></i>
+                    <h3>Approach to the data</h3> <p>we decided to find website that has regular patterns thus making it easy to scrap and extract skill set information. And we also want each posting has complete information, including salary information. After exploring, we think Cybercoder (http://www.cybercoders.com) and Simplyhired (https://www.simplyhired.com/) are suitable for our purposes</p>
+                </div>
+                
+                <div class="col span-1-of-3 box">
+                    <i class="icon ion-md-options icon-big"></i>
+
+                    <h3>Dataset description</h3>
+                    <p>
+                        From charts below we can see that this two datasets have attributes that include all we want to explore. But both have potential drawbacks. For cybercoder dataset, it lacks company information, it is not big enough and the proportions of job types within the population skew in one direction to Data Engineer position. When we turned to Simplyhired dataset we can see that it has huge number of job postings, but we later discovered that the salary information is doubtable since it is estimated by website.
+
+                    </p>
+                </div>
+                <div class="col span-1-of-3 box">
+                    <i class="icon ion-md-options icon-big"></i>
+
+                    <h3>Techniques</h3>
+                    <p>For web scraping part, we first tried API, but failed to find any resources, then we built crawlers for Simplyhired and Cybercoder and used Xpath and Beautifulsoup to do webscraping. We also spent a lot of time preprocessing text data. We want to get job-skill words out of long, distracting job descriptions, and also extract salary data, location data out of postings. For NLP part, we used Regex, Stopwords, Wordnet Lemmatizer and so on to clean text data.
+                    </p>
+                </div>
+              
+                
+            </div>
+            <div class="row">
+                <div class="row span-1-of-2 steps-box">
+                    <div class="pic-step">
+                        <a href="img/dataset%20Cybercoder.png" target="_blank"><img src="img/dataset%20Cybercoder.png" alt="skjdnsk" class="app-screen"></a>
+                    </div>
+                    <div class="pic-step">
+                        <a href="img/dataset%20Simply%20hired.png" target="_blank"><img src="img/dataset%20Simply%20hired.png" alt="skjdnsk" class="app-screen"></a>
+                    </div>
+                </div>
+                
+            </div>
+            
+        
+        </section>
+        
+        <section class="section-cities" id="cities">
+            <div class="row">
+                <h2>PART THREE &ndash; Cybercoder analysis</h2>
+            </div>
+      
+            <div class="row">
+                <h2>distribution of job postings</h2>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-2 box">
+                    <constraint><a href="img/use4.png" target="_blank"><img src="img/use4.png" alt="lisbon"></a></constraint>
+                    
+                    
+                    
+                </div>
+               
+                <div class="col span-1-of-2 box">
+                    <constraint> <p> <strong> State Distribution of Jobs Listings</strong> <br><br>California, Massachusetts, New York, Texas, Virginia, and Washington stand out in that they represent each of the four job types. This finding makes sense because these states have a significant number of technology companies and therefore data related jobs. For example, unrelated to our data, CA with the Bay Area is the hub for everything data with companies like Facebook and Google that have warehouses holding and processing roughly 300 Petabytes of data each ( 322,122,547,200 megabytes). That is almost a comprehensible amount of data, and with that in mind, it makes sense that companies in California are in need of filling Data Scientist, Data Engineer, Data Analyst, and Business Intelligence positions. It is worth noting, some states are very particular in the jobs posted in their state and this can be related to the industry type representing these listings in that state. </p></constraint>
+                
+                </div>
+                
+                
+            </div>
+            <div class="row">
+                <div class="col span-1-of-2 box">
+                    <constraint><a href="img/fang1.png" target="_blank"><img src="img/fang1.png" alt="skdnckalnckaln"></a></constraint>
+                    
+                    
+                    
+                </div>
+               
+                <div class="col span-1-of-2 box">
+                    <constraint><p> Distribution of the Cities within Top 15 Frequent Locations
+<br><br>We can see that 9 out of the top 15 represented cities are located in the Bay Area, making it a great place to look for a data science related position. It also reveals an exciting part of our job listing population that aligns with our previous findings. We can see that California has a diverse option for the cities where one can search for listings. Once again, this is related to the vast number of companies seeking those that have the skills necessary to understand the immense amount of data they are collecting. The other states do not have these diverse set of city options, indicating that majority of technology firms in these states are only in specific cities.
+</p></constraint>
+                
+                </div>
+                
+                
+            </div>
+                       <div class="row">
+                <h2>skills analysis</h2>
+            </div> 
+            
+            <div class="row">
+                
+                <div class="col span-1-of-2 box">
+                    <constraint><a href="img/BI%20skills.png" target="_blank"><img src="img/BI%20skills.png" alt="lisbon"></a></constraint>
+                    
+                    
+                    
+                </div>
+               
+                <div class="col span-1-of-2 box">
+                    <constraint><a href="img/BI%20WC.png" target="_blank"><img src="img/BI%20WC.png" alt="skdnckalnckaln"></a></constraint>
+                
+                </div>
+                
+                
+            </div>
+            <div class="city-feature">
+                        <p></p>
+                    </div>
+            <div class="row">
+                <div class="col span-1-of-2 box">
+                    <constraint><a href="img/DS%20skills2.png" target="_blank"><img src="img/DS%20skills2.png" alt="skdnckalnckaln"></a></constraint>
+                    
+                    
+                    
+                </div>
+               
+                <div class="col span-1-of-2 box">
+                    <constraint><a href="img/DS%20skills.png" target="_blank"><img src="img/DS%20skills.png" alt="skdnckalnckaln"></a></constraint>
+                
+                </div>
+                
+                
+            </div>
+            <div class="city-feature">
+                        <p></p>
+                    </div>
+            <div class="row">
+                <div class="col span-1-of-2 box">
+                    <constraint><a href="img/DA%20skills.png" target="_blank"><img src="img/DA%20skills.png" alt="skdnckalnckaln"></a></constraint>
+                    
+                    
+                    
+                </div>
+               
+                <div class="col span-1-of-2 box">
+                    <constraint><a href="img/DA%20wc.png" target="_blank"><img src="img/DA%20wc.png" alt="skdnckalnckaln"></a></constraint>
+                
+                </div>
+                
+                
+            </div>
+            <div class="city-feature">
+                        <p></p>
+                    </div>
+            <div class="row">
+                <div class="col span-1-of-2 box">
+                    <constraint><a href="img/DE%20skills.png" target="_blank"><img src="img/DE%20skills.png" alt="skdnckalnckaln"></a></constraint>
+                    
+                    
+                    
+                </div>
+               
+                <div class="col span-1-of-2 box">
+                    <constraint><a href="img/DE%20wc.png" target="_blank"><img src="img/DE%20wc.png" alt="skdnckalnckaln"></a></constraint>
+                
+                </div>
+                
+                
+            </div>
+            <div class="row">
+            <div class="city-feature">
+                        <p>Top Skills -  Overall and for Each Job Type
+<br><br>The requirements for each job type (Data Scientist, Data Engineer, Data Analyst, and Business Intelligence) differ across the population. As expected, due to the technicality required in these roles, we found that programming languages and business applications are pivotal in being able to qualify for these job types. In particular, the most surprising being Python, which has gained some traction in the data science world and is the most demanded skill for Data Scientists and the second to Java for Data Engineers. This finding can add some evidence to the Python versus R debate, and which one is the most commonly used by businesses.<br><br>
+
+Another skill that is worth noting is the need for candidates with SQL skills. SQL is demanded across all job types and learning this is necessary for making yourself the most competitive candidate. Knowing SQL should be expected though because each of these job types requires the collection, cleaning, and use of data which almost always requires the use of databases. Thus, knowledge of SQL is a must to be a self-reliant member of your team.
+</p>
+                    </div>
+        </div>
+            
+            
+                    <div class="row">
+                <h2>Salary analysis</h2>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-2 box">
+                    <constraint><a href="img/salayao.png" target="_blank"><img src="img/salayao.png" alt="skdnckalnckaln"></a></constraint>
+                    
+                    
+                    
+                </div>
+               
+                <div class="col span-1-of-2 box">
+                    <constraint><a href="img/earnings1.png" target="_blank"><img src="img/earnings1.png" alt="skdnckalnckaln"></a></constraint>
+                
+                </div></div>
+            <div class="city-feature">
+                        <p>Earnings - States and Cities
+
+<br><br>Analyzing the expected earnings from two different perspectives returns two vastly different results.  We found that Washington DC and Illinois have the highest expected minimum and maximum earnings. However, when we change perspectives and look at the highest expected minimum and maximum earnings by location only, we find that California is highest earning based on city locations with 8 out of 10 in the minimum perspective and 5 out of 10 in the maximum perspective. A difference between these two subsets is likely due to some outliers with very high earnings in the state's perspective skewing the earnings in one direction. Once again, the Bay Area is the best place to look for a high salary.
+
+</p>
+                    </div>
+
+            <div class="row">
+                <div class="col span-1-of-2 box">
+                    <constraint><a href="img/sala1.png" target="_blank"><img src="img/sala1.png" alt="skdnckalnckaln"></a></constraint>
+                    
+                    
+                    
+                </div>
+               
+                <div class="col span-1-of-2 box">
+                    <constraint><a href="img/sala2.png" target="_blank"><img src="img/sala2.png" alt="skdnckalnckaln"></a></constraint>
+                
+                </div>
+            
+            
+            
+            
+            
+            </div>
+            <div class="city-feature">
+                        <p>Earnings -  Job Type
+
+<br><br>The Data Engineer job type has the highest earnings variance and therefore the most fluctuation out of the group. In contrast, the Data Analyst position has the lowest earnings variance and therefore the least fluctuation out of the four positions. The Data Analyst position having the lowest variance in earnings is likely due to it being an entry-mid career position. Moreover, the Data Engineer position can vary from entry-end career resulting in broader low and high salary range. We found it surprising that the mean salary distributions for the Data Scientist, Data Engineer, and Business Intelligence are very close, but the minimum and maximum ranges are different which may support the experience level hypothesis.
+
+
+
+</p>
+                    </div>
+            
+        </section>
+        
+        
+        
+        <section class="section-testimonials">
+            <div class="row">
+                <h2>Part four &ndash; Geo ANalysis (Simplyhired dataset) </h2>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-2">
+                       <iframe src="https://www.google.com/maps/d/embed?mid=1Pij2IqMyAutaW4R79vqlB1AP8SzMD6qZ" width="640" height="480"></iframe>
+                    
+                
+                
+                
+                </div>
+                <div class="col span-1-of-2">
+                    <blockquote>
+                        We found that information about location exists in every posting and is a reliable source of information, so we decided to focus on the relationship between geographic features and job skills. We choose to use Simplyhired dataset because it has enormous numbers of postings, complete attributes and seldom missing value.
+ <br>
+We can see that jobs cluster within the west coast and east area of USA compared to relatively scarce points scatter in the central part of the State. The result matches our expectation since the population in USA is distributed roughly in this way. And also because data-related job is a relatively new job type and relates to key words like high-tech, massive data, fast developing speed and so on. It is not hard to see the correlation between  job distribution and economic and technology development level of that place. Due to gathering effect, newly emerged enterprises like to set their locations in places having mature infrastructure, developed economy and abundant talents. 
+
+
+
+                    
+                    </blockquote>
+                
+                
+                </div>
+            
+            
+            
+            
+            
+            </div>
+        
+        </section>
+        
+
+            
+        
+        
+        <section class="section-plan" id="plans">
+             <div class="row">
+                <h2>USA - Map of Jobs Listings</h2>
+            </div>
+            <div class="row">
+             <a href="img/posting%20number%20with%20geo.html" target="_blank"><img src="img/geo%20with%20number.png" alt="skdnckalnckalnsc"></a>
+                
+                <p class="long-copy">
+                    Since the last map is not intuitive in showing the extent of the distribution of job postings (because it is grouped by location and no matter how many jobs there are, each location is represented by a single point). So we also made a choropleth map of the job postings. <br><br>
+                The darker color indicates areas with a higher number of job postings and therefore high demand for data science related talent. California, Washington, Nevada, Texas, Florida, Pennsylvania, Maryland, New Jersey, Massachusetts, and Connecticut all have an ample supply of businesses hiring for these types of jobs (Data Scientist, Data Engineer, and Data Analyst).
+
+
+<br><br>
+For any prospective worker, location is one of the most critical factors in deciding whether or not one might take a job offer. With a more local perspective, an in-state job seeker (i.e., someone living in Los Angeles, CA) may know that they need to relocate in advance due to many technology jobs located in the Bay Area. Location is essential in the job search, that is why conducting a detailed analysis of the geographic distribution of our population necessary.
+
+
+            </p>
+            </div>
+            <div class="row">
+                <h2>East Vs. West Coast - Preferred Skills 
+</h2>
+            </div>
+             <div class="row">
+                
+                    <p>From the two previous graph, we can see that east coast and west coast are favorite places for seeking data related jobs. So we want to dig further and explore if there is any difference in job requirements for talents between east and west coast by grouping job location. </p>
+                </div>
+            <div class="row">
+                
+                <div class="col span-1-of-2 box">
+                    <constraint><a href="img/West%20Coast%20Required%20Skills.html" target="_blank"><img src="img/West%20Coast%20Required%20Skills.png" alt="skdnckalnckaln"></a></constraint>
+                    
+                    
+                    
+                </div>
+               
+                <div class="col span-1-of-2 box">
+                    <constraint><a href="img/East%20Coast%20Required%20Skills.html" target="_blank"><img src="img/East%20Coast%20Required%20Skills.png" alt="skdnckalnckaln"></a></constraint>
+                
+                </div>
+               
+                
+            </div>
+            <div class="row span-1-of-1 steps-box">
+                
+                
+                <div class="row span-1-of-1 steps-box">
+                    <div class="works-step">
+                            <div>1</div>
+                            <p>
+Both the east and west coast expect candidates to have experience and an aptitude for teamwork and collaboration. The ability to finish projects or experience doing projects increases the competitiveness of the candidate. Both SQL and database appeared in east and west and are ranked very high. So it is not hard to tell its importance. Both sides think candidates should know HA (High Availability), ETL (Extract, Transform, Load), pipeline, mapping, amp. Other skills include modeling, data mining, machine learning, data cleaning, and visualization.
+
+
+</p>
+                    </div>
+                    <div class="works-step">
+                            <div>2</div>
+                            <p>What appeared most on the east coast is python, it seems that this region prefers candidates to have programming skills. Other skills that only appears on the east coast is Hadoop and Microsoft Excel. Skills that appear only in the west is Microsoft, but we can’t tell it is a skill or the company (since its headquarters are on the west coast). The Bioinformatician only appears on the west coast. Having a high level of "responsibility" is the most emphasized personality of candidates from both east and west. Communication skills and leadership is also a plus for candidates.
+
+</p>
+                    </div>
+                    <div class="works-step">
+                            <div>3</div>
+                            <p>However, overall, the difference between east and west coast is not apparent, they differ slightly in some specific job skills, but more often they share the same job skill requirements. It actually can be justified since globalization has led to convergence, technology shortened distances. Differences caused by geographic factor alone is not that obvious anymore. So it is normal to have same expectation for a job position. And another reason we can think of is that requirements listed in job postings are broad in themselves. For example, almost every company wants SQL talents but surely they will emphasize on different application on SQL, but they won’t post in such a specific way, and we can’t capture information like that, making our result of the difference between east and west coast seems similar.
+</p>
+                    </div>
+
+                </div>
+               
+            
+                
+               
+
+            </div>
+        
+        </section>
+        
+        <section class="section-form" id="section-form">
+            <div class="row">
+                <h2>Conclusion</h2>
+            </div>
+            
+            <p class="long-copy">
+                asdvmlksmdvllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+            </p>
+
+        
+        </section>
+        
+        
+        
+        
+        
+        <section class="section-meals">
+            <ul class="meals-showcase clearfix">
+                <li>
+                    <figure class="meal-photo">
+                        <a href="img/use1.png" target="_blank"><img src="img/use1.png" alt="skdnckalnckalnsc"></a>
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <a href="img/WordCloud%20of%20frequent%20skills.png" target="_blank"><img src="img/WordCloud%20of%20frequent%20skills.png" alt="skdnckalnckalnsc"></a>
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <a href="img/propotion5.png" target="_blank"><img src="img/propotion5.png" alt="skdnckalnckalnsc"></a>
+                    </figure>
+                    
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <a href="img/West%20Coast%20Required%20Skills.png" target="_blank"><img src="img/West%20Coast%20Required%20Skills.png" alt="skdnckalnckalnsc"></a>
+                    </figure>
+                </li>
+            </ul>
+            <ul class="meals-showcase clearfix">
+                <li>
+                    <figure class="meal-photo">
+                        <a href="img/overall skills.png" target="_blank"><img src="img/overall skills.png" alt="skdnckalnckalnsc"></a>
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <a href="img/geo%20with%20number.png" target="_blank"><img src="img/geo%20with%20number.png" alt="skdnckalnckalnsc"></a>
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <a href="img/expected_salaries_by_state.png" target="_blank"><img src="img/expected_salaries_by_state.png" alt="skdnckalnckalnsc"></a>
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <a href="img/box.jpg" target="_blank"><img src="img/box.jpg" alt="skdnckalnckalnsc"></a>
+                    </figure>
+                </li>
+            </ul>
+        
+        </section>
+        
+        
+        <footer>
+            <div class="row">
+                    <ul class="footer-nav">
+                        <li><a href="#">Thanks for your visiting!</a></li>
+                    </ul>
+            </div>
+            <div class="row">
+                <p>
+                    Copyright &copy; 2018.6 by Group 8. All rights reserved
+                </p>
+            
+            </div>
+            
+        
+        
+        </footer>
+        
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script src="script.js"></script>
+      <script src="http://maps.google.com/maps/api/js"></script>
+    <script src="gmaps.js"></script>
+    
+    
+    
+    
+    </body>
+    
+    
+
+
+</html>
